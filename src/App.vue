@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <router-link to="/HotTopic">热门话题</router-link>
+    <router-link to="/TmtNews">TMT 新闻</router-link>
+    <router-link to="/DeveloperInfo">开发者资讯</router-link>
     <router-view></router-view>
   </div>
 </template>
