@@ -1,7 +1,5 @@
-# readhub-vue
-
-> A Vue.js project
-
+# Readhub-vue
+## 使用 vue 模仿  Readhub
 ## Build Setup
 
 ``` bash
