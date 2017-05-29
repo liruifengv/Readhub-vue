@@ -1,6 +1,10 @@
 # Readhub-vue
 ## 使用 vue 模仿  Readhub
-## Build Setup
+## 技术栈
+- vue-cli
+- vue
+- vue-router
+## 构建过程
 
 ``` bash
 # install dependencies
