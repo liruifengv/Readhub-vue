@@ -26,7 +26,12 @@
   }
   body{
     margin: 0;
-
+  }
+  h3{
+    color: #607d8b;
+    font-family: 宋体;
+    font-size: 24px;
+    font-weight: 900;
   }
   .nav{
     height: 30px;
@@ -42,7 +47,7 @@
     padding: 0 15px;
     text-decoration: none;
   }
-  .nav a:focus{
+  .router-link-active{
     background-color: #78909c;
   }
 

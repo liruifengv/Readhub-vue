@@ -1,6 +1,6 @@
 <template>
   <div class="vheader">
-    <h3>{{ msg }}</h3>
+    <img src="../assets/logoalpha_m.png" alt="Readhub">
   </div>
 </template>
 
@@ -18,7 +18,7 @@
 <style scoped>
   .vheader{
 
-    margin: 10px 0px 10px 15px;
+    margin: 13px 0px 10px 15px;
   }
   h3{
     margin: 0;
