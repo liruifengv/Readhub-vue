@@ -1,13 +1,14 @@
   import Vue from 'vue'
   import Router from 'vue-router'
-  import HotTopic from '../components/HotTopic.vue'
-  import TmtNews from '../components/TmtNews.vue'
-  import DeveloperInfo from '../components/DeveloperInfo.vue'
+  import HotTopic from '../views/HotTopic.vue'
+  import TmtNews from '../views/TmtNews.vue'
+  import DeveloperInfo from '../views/DeveloperInfo.vue'
   Vue.use(Router)
+  Vue.config.debug = true
   export default new Router({
     routes: [
       {
-        path: '/HotTopic',
+        path: '/',
         component: HotTopic
       },
       {

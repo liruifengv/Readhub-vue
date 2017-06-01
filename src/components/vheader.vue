@@ -17,7 +17,6 @@
 
 <style scoped>
   .vheader{
-
     margin: 13px 0px 10px 15px;
   }
   h3{
