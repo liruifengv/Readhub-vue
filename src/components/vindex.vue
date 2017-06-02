@@ -24,9 +24,17 @@
       document.getElementById('ReturnTop').classList.add('hidden')
     }
   }
+
   export default {
     name: 'vindex',
-    components: {vheader}
+    components: {vheader},
+    methods: {
+      backtotop: function () {
+        document.body.animate({
+          scorllTop: 0
+        }, 500)
+      }
+    }
   }
 </script>
 
@@ -70,11 +78,12 @@
     background-color: #aaa;
     width: 40px;
     text-align: center;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
+    -webkit-border-radius: 80%;
+    -moz-border-radius: 80%;
     border-radius: 80%;
     line-height: 1;
     z-index: 1000;
+    cursor: pointer;
   }
   #ReturnTop a{
     font-size: 20px;

@@ -3,14 +3,11 @@
     <div class="title" v-for="item in list" v-on:click="toggleInfo(item)">
       {{item.title}}
       <span class="time">{{item.time}}</span>
-      <div class="info" v-show="false">
+      <div class="info" v-show="true">
         {{item.info}}
       </div>
-
     </div>
-
   </div>
-
 </template>
 
 <script>
@@ -79,6 +76,9 @@ a {
   font-weight: 500;
   cursor: pointer;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  border-bottom: 1px solid #dddddd;
+  padding-bottom: 10px;
+  padding-top: 10px;
 }
 .time{
   margin-left: 10px;
@@ -92,19 +92,5 @@ a {
   line-height: 1.8em;
   color: #aaacb4;
 }
-hr{
-  position: relative;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  border: 1px solid #fff;
-}
-hr:after{
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  background: #ddd;
-  width: 100%;
-  height: 1px;
-}
+
 </style>

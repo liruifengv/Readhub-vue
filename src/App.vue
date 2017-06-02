@@ -10,7 +10,7 @@
   export default {
     name: 'app',
     components: {vindex}
-}
+  }
 </script>
 
 <style scoped>
