@@ -1,9 +1,11 @@
 <template>
-  <div class="container">
-    <div class="title" v-for="item in list" v-on:click="toggleInfo(item)">
-      {{item.title}}
-      <span class="time">{{item.time}}</span>
-      <div class="info" v-show="true">
+  <div class="container" v-on:toggle="toggle">
+    <div class="article" v-for="item in list" v-on:click="toggle(item)">
+      <div class="title">
+        {{item.title}}
+        <span class="time">{{item.time}}</span>
+      </div>
+      <div class="info"  v-show="!item.show">
         {{item.info}}
       </div>
     </div>
@@ -18,9 +20,11 @@
 export default {
     name: 'HotTopic',
     data: function () {
-      return {item: ''}
+      return {
+        item: ''
+      }
     },
-    props: ['list', 'isLast'],
+    props: ['list'],
     components: {
     },
     mounted: function () {
@@ -37,8 +41,8 @@ export default {
             console.log(res)
           })
       },
-      toggleInfo (item) {
-        this.$emit('toggleInfo', item)
+      toggle: function (item) {
+        item.show = !item.show
       }
     }
 }
@@ -50,6 +54,11 @@ export default {
     margin-top: 15px;
     margin-left: 15px;
     margin-right: 15px;
+  }
+  .article{
+    border-bottom: 1px solid #dddddd;
+    padding-bottom: 10px;
+    padding-top: 10px;
   }
 h1, h2 {
   font-weight: normal;
@@ -76,9 +85,7 @@ a {
   font-weight: 500;
   cursor: pointer;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  border-bottom: 1px solid #dddddd;
-  padding-bottom: 10px;
-  padding-top: 10px;
+
 }
 .time{
   margin-left: 10px;

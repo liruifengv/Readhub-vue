@@ -1,14 +1,16 @@
 <template>
   <div class="container">
-    <div class="title" v-for="item in list" v-on:click="toggleInfo(item)">
-      {{item.title}}
+    <div class="article" v-for="item in list">
+      <div class="title">
+        {{item.title}}
+      </div>
       <div class="info" v-show="true">
         {{item.info}}
-        <br>
         <br>
         <span class="source">{{item.source}}</span>
       </div>
     </div>
+
   </div>
 </template>
 
@@ -22,7 +24,7 @@
     data: function () {
       return {item: ''}
     },
-    props: ['list', 'isLast'],
+    props: ['list'],
     components: {
     },
     mounted: function () {
@@ -38,9 +40,6 @@
           .catch(function (res) {
             console.log(res)
           })
-      },
-      toggleInfo (item) {
-        this.$emit('toggleInfo', item)
       }
     }
   }
@@ -53,6 +52,11 @@
     margin-left: 15px;
     margin-right: 15px;
   }
+  .article{
+    border-bottom: 1px solid #dddddd;
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }
   h1, h2 {
     font-weight: normal;
   }
@@ -61,12 +65,10 @@
     list-style-type: none;
     padding: 0;
   }
-
   li {
     display: inline-block;
     margin: 0 10px;
   }
-
   a {
     color: #42b983;
   }
@@ -78,15 +80,12 @@
     font-weight: 500;
     cursor: pointer;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    border-bottom: 1px solid #dddddd;
-    padding-bottom: 10px;
-    padding-top: 10px;
   }
   .source{
-    font-size: 10px;
+    font-size: 8px;
     color: #aaacb4;
+    line-height: 3.0em;
   }
-
   .info{
     margin-top: 5px;
     font-size: 14px;
