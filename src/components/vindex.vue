@@ -7,27 +7,18 @@
       <router-link to="/DeveloperInfo">开发者资讯</router-link>
     </div>
     <router-view></router-view>
-
-    <div id="ReturnTop" class="hidden">
-      <a id="backtotop" href="#">↑</a>
-    </div>
+    <backTop></backTop>
   </div>
 </template>
 
 <script>
   import vheader from '../components/vheader'
-
-  window.onscroll = function (e) {
-    if (document.body.scrollTop > 200) {
-      document.getElementById('ReturnTop').classList.remove('hidden')
-    } else {
-      document.getElementById('ReturnTop').classList.add('hidden')
-    }
-  }
-
+  import backTop from '../components/BackTop'
   export default {
     name: 'vindex',
-    components: {vheader},
+    components: {
+      vheader, backTop
+    },
     methods: {
       backtotop: function () {
         document.body.animate({
@@ -69,30 +60,5 @@
   }
   .router-link-exact-active{
     background-color: #78909c;
-  }
-  #ReturnTop{
-    position: fixed;
-    right: 40px;
-    bottom: 40px;
-    border: 1px solid #ddd;
-    background-color: #aaa;
-    width: 40px;
-    text-align: center;
-    -webkit-border-radius: 80%;
-    -moz-border-radius: 80%;
-    border-radius: 80%;
-    line-height: 1;
-    z-index: 1000;
-    cursor: pointer;
-  }
-  #ReturnTop a{
-    font-size: 20px;
-    padding: 10px;
-    display: block;
-    color: #fff;
-    text-decoration: none;
-  }
-  .hidden{
-      display: none;
   }
 </style>

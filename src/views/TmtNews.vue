@@ -7,7 +7,6 @@
       <div class="info" v-show="true">
         {{item.info}}
         <br>
-
         <span class="source">{{item.source}}</span>
       </div>
     </div>
