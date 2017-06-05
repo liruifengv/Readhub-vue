@@ -7,7 +7,7 @@
       <div class="info" v-show="true">
         {{item.info}}
         <br>
-        <span class="source">{{item.source}}</span>
+          <span class="source">{{item.source}}</span>
       </div>
     </div>
 
@@ -23,9 +23,8 @@
   export default {
     name: 'TmtNews',
     data: function () {
-      return {item: ''}
+      return {item: '', list: []}
     },
-    props: ['list'],
     components: {
     },
     mounted: function () {

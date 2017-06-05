@@ -1,5 +1,5 @@
 <template>
-  <div class="container" v-on:toggle="toggle">
+  <div class="container">
     <div class="article" v-for="item in list" v-on:click="toggle(item)">
       <div class="title">
         {{item.title}}
@@ -21,10 +21,10 @@ export default {
     name: 'HotTopic',
     data: function () {
       return {
-        item: ''
+        item: '',
+        list: []
       }
     },
-    props: ['list'],
     components: {
     },
     mounted: function () {

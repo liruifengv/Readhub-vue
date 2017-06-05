@@ -22,9 +22,8 @@
   export default {
     name: 'DeveloperInfo',
     data: function () {
-      return {item: ''}
+      return {item: '', list: []}
     },
-    props: ['list'],
     components: {
     },
     mounted: function () {
