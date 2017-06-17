@@ -48,7 +48,7 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   .container{
-    margin-top: 15px;
+    margin-top: 5px;
     margin-left: 15px;
     margin-right: 15px;
   }

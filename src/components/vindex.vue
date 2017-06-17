@@ -18,13 +18,6 @@
     name: 'vindex',
     components: {
       vheader, backTop
-    },
-    methods: {
-      backtotop: function () {
-        document.body.animate({
-          scorllTop: 0
-        }, 500)
-      }
     }
   }
 </script>
@@ -46,19 +39,26 @@
   }
   .nav{
     height: 30px;
-    background-color: #607d8b;
+    background-color: #fff;
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+    padding-bottom:10px;
   }
   .nav a{
-    height: 30px;
+    height: 40px;
     line-height: 30px;
     display: block;
     font-size: 14px;
     float: left;
-    color: #fff;
-    padding: 0 15px;
+    color: #aaa;
+    padding: 0 10px;
     text-decoration: none;
   }
   .router-link-exact-active{
-    background-color: #78909c;
+    color: #607d8b;
+    border-bottom: 2px solid #607d8b;
+  }
+  a.router-link-exact-active{
+    color: #607d8b;
   }
 </style>
