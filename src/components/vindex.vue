@@ -2,11 +2,13 @@
   <div class="vindex">
     <vheader></vheader>
     <div class="nav">
-      <router-link to="/">热门话题</router-link>
-      <router-link to="/TmtNews">科技动态</router-link>
-      <router-link to="/DeveloperInfo">开发者资讯</router-link>
+      <router-link to="/" tag="span">热门话题</router-link>
+      <router-link to="/TmtNews" tag="span">科技动态</router-link>
+      <router-link to="/DeveloperInfo" tag="span">开发者资讯</router-link>
     </div>
-    <router-view></router-view>
+    <transition name="fade" mode="out-in">
+      <router-view class="view"></router-view>
+    </transition>
     <backTop></backTop>
   </div>
 </template>
@@ -30,6 +32,7 @@
   }
   body{
     margin: 0;
+    background: #eee
   }
   h3{
     color: #607d8b;
@@ -41,24 +44,25 @@
     height: 30px;
     background-color: #fff;
     width: 100%;
-    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
     padding-bottom:10px;
+    display: flex;
+    justify-content:space-around;
   }
-  .nav a{
-    height: 40px;
+  .nav span{
+    height: 30px;
     line-height: 30px;
     display: block;
-    font-size: 14px;
+    font-size: 16px;
     float: left;
-    color: #aaa;
-    padding: 0 10px;
+    color: #737373;
     text-decoration: none;
+    padding-bottom:5px;
+    padding-top:5px;
+    cursor: pointer;
   }
-  .router-link-exact-active{
-    color: #607d8b;
-    border-bottom: 2px solid #607d8b;
-  }
-  a.router-link-exact-active{
-    color: #607d8b;
+  span.router-link-exact-active{
+    color: #246394
   }
 </style>

@@ -1,6 +1,7 @@
 <template>
   <div class="container">
-    <div class="article" v-for="item in list" :key="item.id">
+    <a :href="item.url"  v-for="item in list" :key="item.id" target="_blank">
+          <div class="article">
       <div class="title">
         {{item.title}}
       </div>
@@ -10,6 +11,7 @@
           <span class="source">{{item.siteName}} <span v-show="item.authorName != null">/</span> {{item.authorName}}</span>
       </div>
     </div>
+    </a>
   </div>
 
 </template>
@@ -74,27 +76,26 @@
   }
 
   a {
-    color: #42b983;
-  }
-  .title{
-    position: relative;
-    font-size: 16px;
-    line-height: 1.56em;
-    color: #545454;
-    font-weight: 500;
+    text-decoration: none;
     cursor: pointer;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   }
   .source{
     font-size: 8px;
-    color: #aaacb4;
-    line-height: 3.0em;
+    color: #999 !important;
   }
 
-  .info{
-    margin-top: 5px;
-    font-size: 14px;
-    line-height: 1.8em;
-    color: #aaacb4;
-  }
+  .title{
+  position: relative;
+  font-size: 18px;
+  line-height: 1.7em;
+  color: #000;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+.info{
+  color: #737373;
+  font-size: 16px;
+  line-height: 1.85em;
+  margin-bottom: 24px;
+}
 </style>
