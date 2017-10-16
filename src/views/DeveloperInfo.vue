@@ -5,39 +5,41 @@
         {{item.title}}
       </div>
       <div class="info" v-show="true">
-        {{item.info}}
+        {{item.summary}}
         <br>
-        <span class="source">{{item.source}}</span>
+        <span class="source">{{item.siteName}} <span v-show="item.authorName != null">/</span> {{item.authorName}}</span>
       </div>
     </div>
-
   </div>
 </template>
 
 <script>
   import Vue from 'vue'
-  import VueResource from 'vue-resource'
-  Vue.use(VueResource)
+  import axios from 'axios'
 
+  Vue.use(axios)
   export default {
     name: 'DeveloperInfo',
     data: function () {
-      return {item: '', list: []}
+      return {
+        list: []
+      }
     },
     components: {
     },
-    mounted: function () {
-      this.getDeveloperinfo()
+    created () {
+      this.getNews()
     },
     methods: {
-      getDeveloperinfo: function () {
-        var _this = this
-        this.$http.get('../static/data.json')
-          .then(function (res) {
-            _this.list = res.body.developerinfo.list
-          })
-          .catch(function (res) {
-            console.log(res)
+      getNews () {
+        axios.get('https://api.readhub.me/technews?lastCursor=1508155020000&pageSize=10')
+          .then(res => {
+            if (res.status === 200) {
+              this.list = res.data.data
+              // console.log(res)
+            }
+          }).catch((error) => {
+            console.log(error)
           })
       }
     }

@@ -3,7 +3,7 @@
     <vheader></vheader>
     <div class="nav">
       <router-link to="/">热门话题</router-link>
-      <router-link to="/TmtNews">TMT 新闻</router-link>
+      <router-link to="/TmtNews">科技动态</router-link>
       <router-link to="/DeveloperInfo">开发者资讯</router-link>
     </div>
     <router-view></router-view>

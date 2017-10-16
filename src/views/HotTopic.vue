@@ -14,8 +14,9 @@
 
 <script>
   import Vue from 'vue'
-  import VueResource from 'vue-resource'
-  Vue.use(VueResource)
+  import axios from 'axios'
+
+  Vue.use(axios)
 
 export default {
     name: 'HotTopic',
@@ -27,18 +28,19 @@ export default {
     },
     components: {
     },
-    mounted: function () {
+    created () {
       this.getHottopics()
     },
     methods: {
-      getHottopics: function () {
-        var _this = this
-        this.$http.get('../static/data.json')
-            .then(function (res) {
-              _this.list = res.body.hottopics.list
-            })
-          .catch(function (res) {
-            console.log(res)
+      getHottopics () {
+        axios.get('../static/data.json')
+          .then(res => {
+            if (res.status === 200) {
+              this.list = res.data.hottopics.list
+              // console.log(res)
+            }
+          }).catch((error) => {
+            console.log(error)
           })
       },
       toggle: function (item) {
