@@ -2,9 +2,9 @@
   <div class="vindex">
     <vheader></vheader>
     <div class="nav">
-      <router-link to="/" tag="span">热门话题</router-link>
-      <router-link to="/TmtNews" tag="span">科技动态</router-link>
-      <router-link to="/DeveloperInfo" tag="span">开发者资讯</router-link>
+      <router-link to="/" exact tag="span">热门话题</router-link>
+      <router-link to="/news" tag="span">科技动态</router-link>
+      <router-link to="/tech" tag="span">开发者资讯</router-link>
     </div>
     <transition name="fade" mode="out-in">
       <router-view class="view"></router-view>

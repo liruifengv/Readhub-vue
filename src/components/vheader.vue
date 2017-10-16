@@ -1,6 +1,7 @@
 <template>
   <div class="vheader">
-    <img src="../assets/logoalpha_m.png" alt="Readhub">
+    <img src="../assets/readhub_logo.png" alt="Readhub" class="logo">
+    <a class="joinUs" href="https://mp.weixin.qq.com/s/kREAGXnuZVNw_DspMeDEwA">加入我们</a>
   </div>
 </template>
 
@@ -17,10 +18,26 @@
 
 <style scoped>
   .vheader{
-    margin: 15px 0px 10px 15px;
+    margin: 10px 10px 10px 10px;
   }
   h3{
     margin: 0;
+  }
+  .logo{
+    float: left;
+    width: 109px;
+    height: 28px;
+    margin-bottom: 10px;
+  }
+  .joinUs{
+    float: right;
+    font-size: 14px;
+    color: #999;
+    text-decoration: none;
+    margin-left: 23px;
+    text-decoration: none;
+    font-family: PingFangSC-Light,Microsoft YaHei UI Light,Noto Sans CJK SC Light,sans-serif;
+
   }
 </style>
 
