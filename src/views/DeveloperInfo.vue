@@ -20,7 +20,7 @@
   Vue.use(axios)
   export default {
     name: 'DeveloperInfo',
-    data: function () {
+    data () {
       return {
         list: []
       }

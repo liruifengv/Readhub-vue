@@ -20,7 +20,7 @@
 
 export default {
     name: 'HotTopic',
-    data: function () {
+    data () {
       return {
         item: '',
         list: []
@@ -43,7 +43,7 @@ export default {
             console.log(error)
           })
       },
-      toggle: function (item) {
+      toggle (item) {
         item.show = !item.show
       }
     }
