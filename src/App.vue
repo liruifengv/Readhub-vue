@@ -1,28 +1,32 @@
 <template>
   <div id="app">
     <vindex/>
+    <transition name="fade" mode="out-in">
+      <router-view class="view"></router-view>
+    </transition>
+    <backTop></backTop>
   </div>
-
 </template>
 
 <script>
+  import backTop from './components/BackTop'
   import vindex from './components/vindex'
   export default {
     name: 'app',
-    components: {vindex}
+    components: {
+      vindex,
+      backTop
+    }
   }
 </script>
 
 <style scoped>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  background-color: #fff;
-  padding: 0
-}
+  html{
+    background: #f9f9f9
+  }
   body{
-    margin: 0;
     padding: 0;
-    box-sizing: border-box
-
+    margin: 0;
+    background: #f9f9f9
   }
 </style>

@@ -6,20 +6,15 @@
       <router-link to="/news" tag="span">科技动态</router-link>
       <router-link to="/tech" tag="span">开发者资讯</router-link>
     </div>
-    <transition name="fade" mode="out-in">
-      <router-view class="view"></router-view>
-    </transition>
-    <backTop></backTop>
   </div>
 </template>
 
 <script>
   import vheader from '../components/vheader'
-  import backTop from '../components/BackTop'
   export default {
     name: 'vindex',
     components: {
-      vheader, backTop
+      vheader
     }
   }
 </script>
@@ -29,10 +24,8 @@
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     color: #2c3e50;
     z-index: 999;
-  }
-  body{
-    margin: 0;
-    background: #eee
+    background: #fff;
+    padding: 10px 10px 0 10px 
   }
   h3{
     color: #607d8b;
@@ -45,7 +38,6 @@
     background-color: #fff;
     width: 100%;
     border-top: 1px solid #eee;
-    border-bottom: 1px solid #eee;
     padding-bottom:10px;
     display: flex;
     justify-content:space-around;
