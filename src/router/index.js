@@ -8,7 +8,6 @@
   const Jobs = resolve => require(['../views/Jobs.vue'], resolve)
 
   Vue.use(Router)
-  Vue.config.debug = true
   export default new Router({
     mode: 'history',
     routes: [
