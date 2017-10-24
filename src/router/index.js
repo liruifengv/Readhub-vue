@@ -6,7 +6,6 @@
   const DeveloperInfo = resolve => require(['../views/DeveloperInfo.vue'], resolve)
 
   Vue.use(Router)
-  Vue.config.debug = true
   export default new Router({
     mode: 'history',
     routes: [
