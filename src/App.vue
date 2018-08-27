@@ -21,11 +21,11 @@
 
 <style scoped>
   html{
-    background: #f9f9f9
+    background: #fff
   }
   body{
     padding: 0;
     margin: 0;
-    background: #f9f9f9
+    background: #fff
   }
 </style>
