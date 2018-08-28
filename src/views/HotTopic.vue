@@ -24,11 +24,15 @@
         </div>
       </div>
     </div>
+    <div class="footer" v-show="!flag">
+      <loading />
+    </div>
   </div>
 </template>
 
 <script>
 import timeago from 'timeago.js'
+import Loading from '../components/Loading'
 
 export default {
   name: 'HotTopic',
@@ -37,10 +41,12 @@ export default {
       selectIndex: -1,
       show: false,
       list: [],
-      lastCursor: ''
+      lastCursor: '',
+      flag: true
     }
   },
   components: {
+    Loading
   },
   created () {
     this.getNews()
@@ -73,19 +79,24 @@ export default {
       if (scrollTop + windowHeight === scrollHeight) {
       // 写后台加载数据的函数
         this.getMore()
+        this.flag = false
       }
     },
     getMore () {
-      this.$http.get(`/topic?lastCursor=${this.lastCursor}&pageSize=20`)
-        .then(res => {
-          if (res.status === 200) {
-            console.log(res.data)
-            this.list = [...this.list, ...res.data.data]
-            this.lastCursor = res.data.data[19].order
-          }
-        }).catch((error) => {
-          console.log(error)
-        })
+      if (this.flag) {
+        this.$http.get(`/topic?lastCursor=${this.lastCursor}&pageSize=20`)
+          .then(res => {
+            if (res.status === 200) {
+              console.log(res.data)
+              this.list = [...this.list, ...res.data.data]
+              this.lastCursor = res.data.data[19].order
+              this.flag = true
+            }
+          }).catch((error) => {
+            console.log(error)
+            this.flag = true
+          })
+      }
     },
     toggle (index) {
       this.selectIndex === index ? this.selectIndex = -1 : this.selectIndex = index

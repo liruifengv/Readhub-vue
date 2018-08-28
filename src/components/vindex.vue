@@ -2,9 +2,13 @@
   <div class="vindex">
     <vheader></vheader>
     <div class="nav">
-      <router-link to="/" exact tag="span">热门话题</router-link>
-      <router-link to="/news" tag="span">科技动态</router-link>
-      <router-link to="/tech" tag="span">开发者资讯</router-link>
+      <div class="nav-wrapper">
+        <router-link to="/" exact tag="span">热门话题</router-link>
+        <router-link to="/news" tag="span">科技动态</router-link>
+        <router-link to="/tech" tag="span">开发者资讯</router-link>
+        <router-link to="/blockchain" tag="span">区块链快讯</router-link>
+        <router-link to="/jobs" tag="span">招聘行情</router-link>
+      </div>
     </div>
   </div>
 </template>
@@ -34,25 +38,27 @@
     font-weight: 900;
   }
   .nav{
-    height: 30px;
+    margin-top: 50px;
+    height: 50px;
+    line-height: 50px;
     background-color: #fff;
-    width: 100%;
-    border-top: 1px solid #eee;
-    padding-bottom:10px;
-    display: flex;
-    justify-content:space-around;
+    overflow: hidden;
+    position: relative;
   }
-  .nav span{
+  .nav-wrapper span{
     height: 30px;
-    line-height: 30px;
-    display: block;
-    font-size: 16px;
-    float: left;
+    padding-bottom: 5px;
+    font-size: 15px;
     color: #737373;
-    text-decoration: none;
-    padding-bottom:5px;
-    padding-top:5px;
-    cursor: pointer;
+    margin-right: 30px;
+    display: inline-block;
+  }
+  .nav-wrapper {
+    padding: 0 18px;
+    height: 68px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
   }
   span.router-link-exact-active{
     color: #246394

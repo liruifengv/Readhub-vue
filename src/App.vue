@@ -4,6 +4,7 @@
     <transition name="fade" mode="out-in">
       <router-view class="view"></router-view>
     </transition>
+    <back-top></back-top>
   </div>
 </template>
 

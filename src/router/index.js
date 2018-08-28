@@ -4,6 +4,8 @@
 
   const TmtNews = resolve => require(['../views/TmtNews.vue'], resolve)
   const DeveloperInfo = resolve => require(['../views/DeveloperInfo.vue'], resolve)
+  const BlockChain = resolve => require(['../views/BlockChain.vue'], resolve)
+  const Jobs = resolve => require(['../views/Jobs.vue'], resolve)
 
   Vue.use(Router)
   Vue.config.debug = true
@@ -24,6 +26,16 @@
         path: '/tech',
         name: 'DeveloperInfo',
         component: DeveloperInfo
+      },
+      {
+        path: '/blockchain',
+        name: 'BlockChain',
+        component: BlockChain
+      },
+      {
+        path: '/jobs',
+        name: 'jobs',
+        component: Jobs
       }
     ]
   })

@@ -14,7 +14,7 @@
   import Loading from '../components/Loading'
 
   export default {
-    name: 'TmtNews',
+    name: 'DeveloperInfo',
     data () {
       return {
         list: [],
@@ -37,8 +37,7 @@
     methods: {
       getNews () {
         this.timestamp = Date.parse(new Date())
-        // console.log(this.timestamp)
-        this.$http.get(`/news?lastCursor=${this.timestamp}&pageSize=10`)
+        this.$http.get(`/blockchain?lastCursor=${this.timestamp}&pageSize=10`)
           .then(res => {
             if (res.status === 200) {
               this.list = res.data.data
@@ -65,7 +64,7 @@
       getMore () {
         if (this.flag) {
           this.timestamp = this.timestamp - 504000
-          this.$http.get(`/news?lastCursor=${this.timestamp}&pageSize=10`)
+          this.$http.get(`/blockchain?lastCursor=${this.timestamp}&pageSize=10`)
             .then(res => {
               if (res.status === 200) {
                 console.log(res.data)
