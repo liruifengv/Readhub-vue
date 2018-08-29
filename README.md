@@ -1,4 +1,4 @@
-# Readhub-vue
+# [Readhub-vue](https://liruifengv.github.io/Readhub-vue/dist/index.html)
 ## 使用 vue 模仿  Readhub
 
 ### 项目简介
